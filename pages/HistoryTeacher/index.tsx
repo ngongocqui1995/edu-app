@@ -33,7 +33,7 @@ const HistoryTeacher = ({ navigation }: any) => {
       })
     );
 
-    if (res?.data.length < 10) {
+    if (res?.data?.data.length < 10) {
       setState({ isStop: true });
     }
     if (type == "refresh") {
@@ -66,15 +66,13 @@ const HistoryTeacher = ({ navigation }: any) => {
       <FlatList
         mt="4"
         ListEmptyComponent={
-          state.loading ? (
-            <ActivityIndicator />
-          ) : (
+          !state.loading ? (
             <Box safeArea>
               <Center>
                 <Text fontSize={14}>Không có lớp học</Text>
               </Center>
             </Box>
-          )
+          ) : null
         }
         refreshControl={
           <RefreshControl

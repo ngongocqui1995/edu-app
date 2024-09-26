@@ -12,13 +12,8 @@ import {
   Heading,
   View,
   Text,
-  Spinner,
 } from "native-base";
-import {
-  ActivityIndicator,
-  RefreshControl,
-  TouchableOpacity,
-} from "react-native";
+import { RefreshControl, TouchableOpacity } from "react-native";
 
 const HistoryTeacherDate = ({ navigation, route }: any) => {
   const { id } = route.params || {};
@@ -42,7 +37,7 @@ const HistoryTeacherDate = ({ navigation, route }: any) => {
       })
     );
 
-    if (res?.data.length < 10) {
+    if (res?.data?.data.length < 10) {
       setState({ isStop: true });
     }
     if (type == "refresh") {
@@ -81,15 +76,13 @@ const HistoryTeacherDate = ({ navigation, route }: any) => {
         <FlatList
           mt="4"
           ListEmptyComponent={
-            state.loading ? (
-              <ActivityIndicator />
-            ) : (
+            !state.loading ? (
               <Box safeArea>
                 <Center>
                   <Text fontSize={14}>Không có ngày</Text>
                 </Center>
               </Box>
-            )
+            ) : null
           }
           refreshControl={
             <RefreshControl
@@ -133,21 +126,6 @@ const HistoryTeacherDate = ({ navigation, route }: any) => {
           }}
         />
       </Box>
-      {state.loading && (
-        <Flex
-          position="absolute"
-          top={0}
-          bottom={0}
-          left={0}
-          right={0}
-          bg="rgba(0, 0, 0, 0.2)"
-          flex="1"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Spinner color="blue.500" size="lg" />
-        </Flex>
-      )}
     </View>
   );
 };

@@ -11,4 +11,5 @@ export const NAVIGATOR_SCREEN = {
   NOTIFY_STUDENT: "NOTIFY_STUDENT",
 };
 
-export const SERVER_URL = "http://192.168.200.215:9002/";
+// export const SERVER_URL = "http://192.168.200.215:9002/";
+export const SERVER_URL = "https://edu-api-pdos.onrender.com/";

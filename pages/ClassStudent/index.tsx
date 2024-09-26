@@ -43,15 +43,13 @@ const ClassStudent = ({ navigation }: any) => {
       <FlatList
         mt="4"
         ListEmptyComponent={
-          state.loading ? (
-            <ActivityIndicator />
-          ) : (
+          !state.loading ? (
             <Box safeArea>
               <Center>
                 <Text fontSize={14}>Không có lớp học</Text>
               </Center>
             </Box>
-          )
+          ) : null
         }
         refreshControl={
           <RefreshControl

@@ -11,15 +11,10 @@ import {
   View,
   Text,
   Flex,
-  Spinner,
   useToast,
   ChevronLeftIcon,
 } from "native-base";
-import {
-  ActivityIndicator,
-  RefreshControl,
-  TouchableOpacity,
-} from "react-native";
+import { RefreshControl, TouchableOpacity } from "react-native";
 
 const StudentInClass = ({ route, navigation }: any) => {
   const { id, name, disabled } = route.params || {};
@@ -138,15 +133,13 @@ const StudentInClass = ({ route, navigation }: any) => {
         <FlatList
           mt="4"
           ListEmptyComponent={
-            state.loading ? (
-              <ActivityIndicator />
-            ) : (
+            !state.loading ? (
               <Box safeArea>
                 <Center>
                   <Text fontSize={14}>Không có học sinh</Text>
                 </Center>
               </Box>
-            )
+            ) : null
           }
           refreshControl={
             <RefreshControl
@@ -199,21 +192,6 @@ const StudentInClass = ({ route, navigation }: any) => {
           }}
         />
       </Box>
-      {state.loading && (
-        <Flex
-          position="absolute"
-          top={0}
-          bottom={0}
-          left={0}
-          right={0}
-          bg="rgba(0, 0, 0, 0.2)"
-          flex="1"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Spinner color="blue.500" size="lg" />
-        </Flex>
-      )}
     </View>
   );
 };
