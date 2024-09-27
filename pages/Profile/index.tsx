@@ -45,14 +45,14 @@ const Profile = ({ navigation }: any) => {
           </Flex>
         </Center>
       </Flex>
-      <Flex direction="column" mt="10" h={56}>
-        <Text fontSize={16} fontWeight={700}>
+      <Flex direction="column" mt="10">
+        <Text my="2" fontSize={16} fontWeight={700}>
           Tài khoản của tôi
         </Text>
         <Spacer />
         <Divider />
         <Spacer />
-        <Flex direction="row" justifyContent="space-between">
+        <Flex my="2" direction="row" justifyContent="space-between">
           <Text fontSize={14} fontWeight={400}>
             Yêu thích
           </Text>
@@ -61,7 +61,7 @@ const Profile = ({ navigation }: any) => {
         <Spacer />
         <Divider />
         <Spacer />
-        <Flex direction="row" justifyContent="space-between">
+        <Flex my="2" direction="row" justifyContent="space-between">
           <Text fontSize={14} fontWeight={400}>
             Cài đặt an toàn
           </Text>
@@ -71,6 +71,7 @@ const Profile = ({ navigation }: any) => {
         <Divider />
         <Spacer />
         <Text
+          my="2"
           onPress={async () => {
             dispatch(resetProfile());
             await AsyncStorage.removeItem("accessToken");

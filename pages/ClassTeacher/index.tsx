@@ -96,7 +96,6 @@ const ClassTeacher = ({ navigation }: any) => {
               }}
             >
               <Flex
-                h="20"
                 w="full"
                 direction="row"
                 borderBottomWidth="1"

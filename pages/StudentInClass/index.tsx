@@ -159,7 +159,6 @@ const StudentInClass = ({ route, navigation }: any) => {
                 onPress={() => onAttendance(item)}
               >
                 <Flex
-                  h="32"
                   w="full"
                   direction="row"
                   borderBottomWidth="1"

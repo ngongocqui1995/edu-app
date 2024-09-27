@@ -85,7 +85,6 @@ const NotifyStudent = ({ navigation, route }: any) => {
           renderItem={({ item }) => {
             return (
               <Flex
-                h="32"
                 w="full"
                 direction="row"
                 borderBottomWidth="1"
